@@ -17,9 +17,14 @@ Route::get('/', function () {
 
 Route::get('/token', function (){return csrf_token();});
 
-Route::get('/listar', "PeliculaController@listar");
-Route::post('/registro', "PeliculaController@registrar");
-Route::post('/eliminar/{id}', "PeliculaController@eliminar");
+Route::group(['middelware' => ['cors']], function (){
+
+    Route::get('/listar', "PeliculaController@listar");
+    Route::post('/registro', "PeliculaController@registrar");
+    Route::post('/eliminar/{id}', "PeliculaController@eliminar");
 
 // test
-Route::get('/test', "PeliculaController@test");
+    Route::get('/test', "PeliculaController@test");
+});
+
+
