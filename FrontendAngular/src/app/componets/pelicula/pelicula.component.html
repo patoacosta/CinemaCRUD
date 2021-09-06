@@ -1,0 +1,75 @@
+<!--Boton Nueva Pelicula-->
+<div class="container">
+  <div class="row">
+    <div class="text-end">
+      <button class="btn btn-outline-success" (click)="open(mymodal, 1)" id="nuevaPelicula">Nueva Pelicula</button>
+    </div>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">idPelicula</th>
+      <th scope="col">nombrePelicula</th>
+      <th scope="col">imagenPelicula</th>
+      <th scope="col">duracionPelicula</th>
+      <th scope="col">categoriaPelicula</th>
+      <th scope="col" class="text-center">Horarios</th>
+      <th scope="col" class="text-center">Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pelicula of listaPeliculas">
+      <td scope="row">{{pelicula.idPelicula}}</td>
+      <td>{{pelicula.nombrePelicula}}</td>
+      <td>{{pelicula.imagenPelicula}}</td>
+      <td>{{pelicula.duracionPelicula}}</td>
+      <td>{{pelicula.clasificacionPelicula}}</td>
+      <td class="text-center">{{pelicula.horariosPelicula}}</td>
+      <td><button class="btn btn-outline-success" (click)="modificar(mymodal, pelicula)">Editar</button></td>
+      <td><button class="btn btn-outline-success" (click)="eliminarPelicula(eliminar, pelicula)">Eliminar</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--Modal Nueva Pelicula-->
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{dato}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <input class="form-control me-2" type="text" placeholder="Nombre de Pelicula" [(ngModel)]="pelicula.nombrePelicula"><br/>
+    <input class="form-control me-2" type="text" placeholder="Imagen de Pelicula" [(ngModel)]="pelicula.imagenPelicula"><br/>
+    <input class="form-control me-2"type="text" placeholder="Duracion de Pelicula" [(ngModel)]="pelicula.duracionPelicula"><br/>
+    <input class="form-control me-2" type="text" placeholder="Clasificacion de Pelicula" [(ngModel)]="pelicula.clasificacionPelicula"><br/>
+    <input class="form-control me-2" type="text" placeholder="Horarios de Pelicula" [(ngModel)]="pelicula.horariosPelicula"><br/>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="guardar()">Guardar</button>
+  </div>
+</ng-template>
+
+
+<!--Modal Eliminar Pelicula-->
+<ng-template #eliminar let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="eliminar">Eliminar pelicula.</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <label >¿Deseas eliminar este registro?</label><br/>
+  <div class="modal-footer">
+    <button class="btn btn-lg" style="background-color:transparent;" (click)="eliminarSi()" id="X">Si</button>
+    <button class="btn btn-lg" style="background-color:transparent;" (click)="modal.dismiss('Cross click')">No</button>
+  </div>
+</ng-template>
+
+
+
