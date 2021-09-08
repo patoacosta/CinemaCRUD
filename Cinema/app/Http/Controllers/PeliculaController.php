@@ -55,16 +55,16 @@ class PeliculaController extends Controller
             $model = new PeliculaModel();
             $datos = $model->listarHorarios();
 //            dd($datos);
-            return array(
-                "Codigo: " => 201,
-                "Datos: " => $datos,
-                "Mensaje: " => "test."
-            );
+            return json_encode(array(
+                "codigo" => 201,
+                "datos" => $datos,
+                "mensaje" => "test."
+            ));
         }catch(\Exception $exception){
             return array(
-                "Codigo: " => 501,
-                "Datos: " => $exception->getMessage(),
-                "Mensaje: " => "test."
+                "codigo: " => 501,
+                "datos: " => $exception->getMessage(),
+                "mensaje: " => "test."
             );
         }
     }

@@ -8,6 +8,7 @@ use phpDocumentor\Reflection\Types\Array_;
 
 class PeliculaModel extends Model
 {
+
     public function registrarActualizar($request){
 
         if($request->id){

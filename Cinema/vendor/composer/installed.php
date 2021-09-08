@@ -1,15 +1,33 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => '5.8.x-dev',
-        'version' => '5.8.9999999.9999999-dev',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'c4a7a7bc9cdccd00d6fdda8846d1660a0608d7ef',
+        'reference' => '954e56aa7b335af11731e1ace6f71e81411e7734',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
+        'asm89/stack-cors' => array(
+            'pretty_version' => '1.3.0',
+            'version' => '1.3.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../asm89/stack-cors',
+            'aliases' => array(),
+            'reference' => 'b9c31def6a83f84b4d4a40d35996d375755f0e08',
+            'dev_requirement' => false,
+        ),
+        'barryvdh/laravel-cors' => array(
+            'pretty_version' => 'v0.11.4',
+            'version' => '0.11.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../barryvdh/laravel-cors',
+            'aliases' => array(),
+            'reference' => '03492f1a3bc74a05de23f93b94ac7cc5c173eec9',
+            'dev_requirement' => false,
+        ),
         'beyondcode/laravel-dump-server' => array(
             'pretty_version' => '1.3.0',
             'version' => '1.3.0.0',
@@ -326,12 +344,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '5.8.x-dev',
-            'version' => '5.8.9999999.9999999-dev',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'c4a7a7bc9cdccd00d6fdda8846d1660a0608d7ef',
+            'reference' => '954e56aa7b335af11731e1ace6f71e81411e7734',
             'dev_requirement' => false,
         ),
         'laravel/tinker' => array(
